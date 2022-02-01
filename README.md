@@ -1,2 +1,2 @@
 # libft
-lift
+libft with 42
