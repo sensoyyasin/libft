@@ -1,40 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 11:13:01 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/05 12:21:44 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/01 13:16:29 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/04 20:04:47 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_toupper(int c)
 {
-	int		i;
-	int		a;
-	char	*str;
-
-	i = 0;
-	a = 0;
-	str = (char *)s;
-	while (s[i] != c && s[i] != '\0')
-		i++;
-	if (s[i] == '\0')
-		str[a] = s[i];
-	while (s[i] != '\0')
-	{
-		str[a++] = s[i++];
-	}
-	str[a] = '\0';
-	return (str);
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }
-
-/*int	main()
-{
-	char dizi[] = "yasintemp";
-	ft_putstr(ft_strchr(dizi,'x'));
-}*/

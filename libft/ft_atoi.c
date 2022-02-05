@@ -1,57 +1,49 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/04 16:38:46 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/05 14:48:16 by ysensoy          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	sonucver(int i, int e, char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
-	int	a;
-	int	sonuc;
+	int		i;
+	int		res;
+	int		pos;
+	char	*s;
 
-	a = 0;
-	sonuc = 0;
-	while (str[i + e + a] != '\0')
-	{
-		if (str[i + e + a] <= '9' && str[i + e + a] >= '0')
-		{
-			sonuc *= 10;
-			sonuc += str[i + e + a] - '0';
-		}
-		else
-			break;
-		a++;
-	}
-	return (sonuc);
-}
-int	ft_atoi(char *str)
-{
-	int	c;
-	int	e;
-	int	i;
-	int	sonuc;
-
-	c = 0;
-	e = 0;
+	pos = 1;
 	i = 0;
-	sonuc = 0;
-	while (str[i] <= 32)
+	res = 0;
+	s = (char *)str;
+	while (s[i] == ' ' || (s[i] > 8 && s[i] < 14))
 		i++;
-	while (str[i + e] == '-' || str[i + e] == '+')
+	if (s[i] == '+' || s[i] == '-')
+		pos = 1 - 2 * (s[i++] == '-');
+	while (s[i] >= '0' && s[i] <= '9')
 	{
-		if (str[i + e] == '-')
-			c++;
-		e++;
+		if (res > 2147483647 / 10 || (res == 2147483647 / 10
+				&& s[i] - '0' > 7 && pos != -1))
+		{
+			if (pos == 1)
+				return (-1);
+			return (0);
+		}
+		res = res * 10 +(s[i++] - 48);
 	}
-	c = c % 2;
-	if (c == 1)
-		c = -1;
-	else
-		c = 1;
-	sonuc = sonucver(i, e, str);
-	return (sonuc * c);
+	return (res * pos);
 }
-#include <stdio.h>
-int	main(void);
+
+/*int	main()
 {
-	char	str1[] = "        +++--a-123";
-	int	val = ft_atoi(str1);
-	printf("%d",val);
-	return (0);
-}
+	char	yasin[] = "  \e475";
+	printf("%d\n",ft_atoi(yasin));
+	printf("%d",atoi(yasin));
+}*/

@@ -6,21 +6,21 @@
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 11:42:23 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/01/31 11:45:08 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/05 11:40:06 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_isprint(int	c)
+int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 32 && c < 127)
 		return (1);
 	return (0);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main()
 {
 	printf("%d",ft_isprint(34));
-}
+}*/

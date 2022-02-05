@@ -6,7 +6,7 @@
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:54:08 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/01 11:54:11 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/05 10:55:24 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int	i;
+	size_t	i;
 	char	*str1;
 	char	*str2;
 
@@ -27,12 +27,4 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		i++;
 	}
 	return (str2);
-}
-
-int	main()
-{
-	const char src[50] = "metetemp";
-	char dest[50] = "yasintemp";
-	ft_memcpy(dest,src,4);
-	ft_putstr(dest);
 }

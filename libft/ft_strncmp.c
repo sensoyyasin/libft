@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 11:13:01 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/05 12:21:44 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/05 11:29:53 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/05 12:22:16 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strncmp(const char	*s1, const char	*s2, size_t n)
 {
-	int		i;
-	int		a;
-	char	*str;
+	char	*k1;
+	char	*k2;
+	size_t	i;
 
 	i = 0;
-	a = 0;
-	str = (char *)s;
-	while (s[i] != c && s[i] != '\0')
-		i++;
-	if (s[i] == '\0')
-		str[a] = s[i];
-	while (s[i] != '\0')
+	k1 = (char *)s1;
+	k2 = (char *)s2;
+	while ((s1[i] != '\0' || s2[i] != '\0') && n < i)
 	{
-		str[a++] = s[i++];
+		if (s1[i] < 32 && s2[i] < 32)
+			return (s2[i] - s1[i]);
+		else if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	str[a] = '\0';
-	return (str);
+	return (0);
 }
-
-/*int	main()
+/*#include <string.h>
+int	main()
 {
-	char dizi[] = "yasintemp";
-	ft_putstr(ft_strchr(dizi,'x'));
+	printf("%d\n",ft_strncmp("test\200", "test\0", 6));
+	printf("%d",strncmp("test\200", "test\0", 6));
 }*/

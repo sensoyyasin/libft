@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 11:13:01 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/05 12:21:44 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/01/31 12:59:33 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/05 10:59:52 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlen(const char *s)
 {
-	int		i;
-	int		a;
-	char	*str;
+	size_t	a;
 
-	i = 0;
 	a = 0;
-	str = (char *)s;
-	while (s[i] != c && s[i] != '\0')
-		i++;
-	if (s[i] == '\0')
-		str[a] = s[i];
-	while (s[i] != '\0')
+	while (s[a] != '\0')
 	{
-		str[a++] = s[i++];
+		a++;
 	}
-	str[a] = '\0';
-	return (str);
+	return (a);
 }
-
-/*int	main()
-{
-	char dizi[] = "yasintemp";
-	ft_putstr(ft_strchr(dizi,'x'));
-}*/

@@ -6,7 +6,7 @@
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:04:13 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/01 11:41:00 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/05 11:19:36 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int	i;
+	int		i;
+	char	*s1;
+	char	*s2;
 
 	i = 0;
-	while (i < len)
-	{
-		((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
-		i++;
-	}
-	return (dst);
+	s1 = (char *)dst;
+	s2 = (char *)src;
+	ft_memcpy(dst, src, len);
+	return (s1);
 }
 
-int	main()
+/*int	main()
 {
 	const	char src[50] = "yasin";
 	char dest[50] = "besiktas";
 	ft_memmove(dest,src,3);
-	ft_putstr(dest);
-}
+	printf("%s",ft_memmove(dest,src,3));
+}*/

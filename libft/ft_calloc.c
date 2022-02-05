@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 11:13:01 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/05 12:21:44 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/05 14:01:11 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/05 14:05:00 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int		i;
-	int		a;
-	char	*str;
+	void	*p;
 
-	i = 0;
-	a = 0;
-	str = (char *)s;
-	while (s[i] != c && s[i] != '\0')
-		i++;
-	if (s[i] == '\0')
-		str[a] = s[i];
-	while (s[i] != '\0')
-	{
-		str[a++] = s[i++];
-	}
-	str[a] = '\0';
-	return (str);
+	p = malloc(count * size);
+	if (p == NULL)
+		return (p);
+	ft_bzero(p, count * size);
+	return (p);
 }
-
-/*int	main()
-{
-	char dizi[] = "yasintemp";
-	ft_putstr(ft_strchr(dizi,'x'));
-}*/

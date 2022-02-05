@@ -6,13 +6,11 @@
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:07:47 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/01/31 16:59:47 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/04 20:05:38 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
-#include <strings.h>
+#include "libft.h"
 
 void	*ft_bzero(void *s, size_t n)
 {
@@ -29,10 +27,10 @@ void	*ft_bzero(void *s, size_t n)
 	return (str);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main()
 {
 	char dizi[] = "yasintemp";
 	printf("%s",ft_bzero(dizi,5));
 	//printf("%s",bzero(dizi,5));
-}
+}*/

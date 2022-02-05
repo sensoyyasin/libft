@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 11:13:01 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/05 12:21:44 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/05 15:56:04 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/05 15:58:53 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		a;
+	size_t	i;
 	char	*str;
+	char	*src;
 
 	i = 0;
-	a = 0;
-	str = (char *)s;
-	while (s[i] != c && s[i] != '\0')
-		i++;
-	if (s[i] == '\0')
-		str[a] = s[i];
-	while (s[i] != '\0')
+	src = (char *)s;
+	str = (char *)malloc(sizeof(char) * len);
+	while (i < len)
 	{
-		str[a++] = s[i++];
+		str[i] = src[start];
+		i++;
+		start++;
 	}
-	str[a] = '\0';
+	str[i] = '\0';
 	return (str);
 }
-
-/*int	main()
+/*
+int	main()
 {
-	char dizi[] = "yasintemp";
-	ft_putstr(ft_strchr(dizi,'x'));
+	char	yasin[] = "yasintemp";
+	printf("%s",ft_substr(yasin,3,4));
 }*/

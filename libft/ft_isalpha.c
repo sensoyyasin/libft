@@ -1,4 +1,16 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/05 11:14:03 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/05 11:14:06 by ysensoy          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
@@ -7,8 +19,8 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main()
 {
 	printf("%d",ft_isalpha('0'));
-}
+}*/

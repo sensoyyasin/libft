@@ -6,7 +6,7 @@
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:07:05 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/01/31 17:27:24 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/05 11:21:40 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
-	unsigned	char	*str;
+	char	*str;
 
 	i = 0;
-	str = (unsigned char *)b;
+	str = (char *)b;
 	while (i < len)
 	{
 		str[i] = c;
@@ -27,8 +27,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 
-int	main()
+/*int	main()
 {
 	char dizi[30] = "yasintemp";
 	ft_putstr(ft_memset(dizi,'x',4));
-}
+}*/

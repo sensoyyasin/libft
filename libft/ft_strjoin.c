@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 11:13:01 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/05 12:21:44 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/05 17:04:56 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/05 17:04:57 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		a;
-	char	*str;
+	char	*src;
+	char	*dest;
+	char	*dizi;
 
 	i = 0;
 	a = 0;
-	str = (char *)s;
-	while (s[i] != c && s[i] != '\0')
-		i++;
-	if (s[i] == '\0')
-		str[a] = s[i];
-	while (s[i] != '\0')
+	src = (char *)s1;
+	dest = (char *)s2;
+	dizi = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	while (src[i] != '\0')
 	{
-		str[a++] = s[i++];
+		dizi[i] = src[i];
+		i++;
 	}
-	str[a] = '\0';
-	return (str);
+	while (dest[a] != '\0')
+	{
+		dizi[i] = dest[a];
+		a++;
+		i++;
+	}
+	dizi[i] = '\0';
+	return (dizi);
 }
-
-/*int	main()
+/*
+int	main()
 {
-	char dizi[] = "yasintemp";
-	ft_putstr(ft_strchr(dizi,'x'));
+	char	yasin[20] = "yasintemp";
+	char	mete[20] = "metetemp";
+	printf("%s", ft_strjoin(yasin,mete));
 }*/
