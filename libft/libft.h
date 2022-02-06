@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 //typedef	unsigned	int	size_t;
 int		ft_atoi(const	char *str);
@@ -21,6 +22,8 @@ void	*ft_memcpy(void	*dst,const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void	*b,int c, size_t len);
 void	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void	ft_putstr_fd(char *s, int fd);
+char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s,int c);
 char	*ft_strdup(const char *s1);

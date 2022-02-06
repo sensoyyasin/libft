@@ -6,7 +6,7 @@
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 11:23:39 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/05 12:39:42 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/06 14:44:04 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,22 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	lensrc;
-	size_t	lendst;
-	size_t	c;
-	size_t	retval;
+	size_t	a;
+	size_t	de;
+	size_t	sr;
 
-	lensrc = 0;
-	lendst = 0;
-	c = 0;
-	while (src[lensrc] != '\0')
-		lensrc++;
-	while (dst[lendst] != '\0')
-		lendst++;
-	if (dstsize == 0)
-		return (lensrc);
-	else if (dstsize < lendst)
-		retval = lensrc + dstsize;
-	else
-		retval = lensrc + lendst;
-	while (src[c] != '\0' && lendst < (dstsize -1))
+	de = ft_strlen(dst);
+	sr = ft_strlen((char *)src);
+	a = 0;
+	if (dstsize <= de)
+		return (dstsize + sr);
+	while (src[a] != '\0' && de + a + 1 < dstsize)
 	{
-		dst[lendst + c] = src[c];
-		c++;
+		dst[de + a] = src[a];
+		a++;
 	}
-	dst[lendst + c] = '\0';
-	return (retval);
+	dst[de + a] = '\0';
+	return (de + sr);
 }
 /*int main(void)
 {
