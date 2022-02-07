@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/05 11:32:29 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/07 15:44:47 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/07 16:56:08 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/07 16:58:11 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
+	char	*str;
+	int		len;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	i = 0;
+	len = ft_strlen(s);
+	if (!s || !f)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	while (s[i] != '\0')
 	{
-		if (s[i] == c)
-		{
-			return ((char *)s + i);
-		}
-		i--;
+		str[i] = (*f)(i, s[i]);
+		i++;
 	}
-	return (NULL);
+	str[i] = '\0';
+	return (str);
 }
-/*
+
+/*char	ft_printf(unsigned int i,char c)
+{
+	c = c - 32;
+	return (c);
+}
+
 int	main()
 {
-	char dizi[] = "yasin";
-	printf("%s",(ft_strrchr(dizi,'s')));
+	char y[] = "yasintemp";
+	printf("%s",ft_strmapi(y, &ft_printf));
 }*/
