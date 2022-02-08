@@ -1,5 +1,4 @@
 # libft
-libft with 42
 
 control details
 
