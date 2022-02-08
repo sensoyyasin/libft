@@ -1,6 +1,8 @@
 # libft
 
 control details
+<img align="right" src="![img_readme](https://user-images.githubusercontent.com/73845925/153059022-bc865001-d52c-4335-a7eb-3e1b14c34087.png)
+" width="50%"/>
 
 ![img_readme](https://user-images.githubusercontent.com/73845925/153059022-bc865001-d52c-4335-a7eb-3e1b14c34087.png)
 
