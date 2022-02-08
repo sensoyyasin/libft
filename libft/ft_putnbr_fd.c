@@ -19,10 +19,13 @@ void	ft_putnbr_fd(int n, int fd)
 
 	i = 0;
 	c = ft_itoa(n);
-	while (c[i] != '\0')
+	if (c)
 	{
-		write(fd, &c[i], 1);
-		i++;
+		while (c[i] != '\0')
+		{
+			write(fd, &c[i], 1);
+			i++;
+		}
 	}
 }
 /*

@@ -14,13 +14,13 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	a;
-	size_t	b;
-	char	*s;
+	size_t			a;
+	size_t			b;
+	unsigned char	*s;
 
 	a = 0;
 	b = 0;
-	s = (char *)src;
+	s = (unsigned char *)src;
 	while (s[a] != '\0')
 		a++;
 	if (dstsize != 0)
@@ -34,7 +34,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (a);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -45,4 +45,4 @@ int	main()
 
 	ft_strlcpy(dizi1,dizi2,20);
 	printf("%zu\n", ft_strlcpy(dizi1,dizi2,20));
-}
+}*/
