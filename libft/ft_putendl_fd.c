@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 11:13:01 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/08 15:07:44 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/08 14:42:17 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/08 14:42:18 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int		i;
-	int		a;
-	char	*str;
 
 	i = 0;
-	a = 0;
-	str = (char *)s;
-	while (s[i] != c && s[i] != '\0')
-		i++;
-	if (s[i] == '\0')
-		str[a] = s[i];
 	while (s[i] != '\0')
-		str[a++] = s[i++];
-	str[a] = '\0';
-	return (str);
-}
-
-int	main()
-{
-	char dizi[] = "yasintemp";
-	printf("%s",ft_strchr(dizi,'i'));
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd, "\n", 1);
 }

@@ -1,4 +1,4 @@
-#include "libft.h"
+/*#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -25,4 +25,4 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr(n / 10);
 		ft_putnbr(n % 10);
 	}
-}
+}*/
