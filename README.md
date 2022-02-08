@@ -1,7 +1,5 @@
 # libft
 
-control details:
-
 #Running script
 
 Run the script from the directory where you cloned
@@ -12,6 +10,7 @@ or run the script with the path
 ```bash
 bash /path/where/you/cloned/grademe.sh
 ```
+Control details:
 
 ![img_readme](https://user-images.githubusercontent.com/73845925/153059022-bc865001-d52c-4335-a7eb-3e1b14c34087.png)
 
