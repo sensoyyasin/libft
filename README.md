@@ -1,5 +1,6 @@
 # libft
 libft with 42
+control details
 
 ![img_readme](https://user-images.githubusercontent.com/73845925/153059022-bc865001-d52c-4335-a7eb-3e1b14c34087.png)
 
