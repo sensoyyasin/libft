@@ -6,7 +6,7 @@
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:56:08 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/07 16:58:11 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/08 12:25:19 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-
-/*char	ft_printf(unsigned int i,char c)
+/*
+char	ft_printf(unsigned int i,char c)
 {
 	c = c - 32;
 	return (c);
@@ -40,6 +40,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 int	main()
 {
-	char y[] = "yasintemp";
+	char y[] = "yasin";
 	printf("%s",ft_strmapi(y, &ft_printf));
 }*/

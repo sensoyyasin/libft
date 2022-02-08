@@ -6,7 +6,7 @@
 /*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:38:46 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/06 15:50:31 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/08 12:29:06 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,34 @@
 
 int	ft_atoi(const char *str)
 {
-	int		i;
-	int		res;
-	int		pos;
-	char	*s;
+	int		s;
+	int		d;
 
-	pos = 1;
-	i = 0;
-	res = 0;
-	s = (char *)str;
-	while (s[i] == ' ' || (s[i] > 8 && s[i] < 14))
-		i++;
-	if (s[i] == '+' || s[i] == '-')
-		pos = 1 - 2 * (s[i++] == '-');
-	while (s[i] >= '0' && s[i] <= '9')
+	s = 0;
+	d = 1;
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+		|| *str == '\f' || *str == '\v' || *str == '\r')
+		str++;
+	if (*str == '-')
 	{
-		if (res > 2147483647 / 10 || (res == 2147483647 / 10
-				&& s[i] - '0' > 7 && pos != -1))
-		{
-			if (pos == 1)
-				return (-1);
-			return (0);
-		}
-		res = res * 10 +(s[i++] - 48);
+		d *= -1;
+		str++;
 	}
-	return (res * pos);
+	else if (*str == '+')
+		str++;
+	if (*str == '+' || *str == '-')
+		return (0);
+	while (*str >= '0' && *str <= '9')
+	{
+		s = (s * 10) + (*str - 48);
+		str++;
+	}
+	return (s * d);
 }
-
-/*int	main()
+/*
+int	main()
 {
-	char	yasin[] = "  \e475";
+	char	yasin[] = " +21474836";
 	printf("%d\n",ft_atoi(yasin));
 	printf("%d",atoi(yasin));
 }*/
