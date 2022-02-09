@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 11:13:01 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/08 15:07:44 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/09 10:16:37 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/09 10:18:25 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ char	*ft_strchr(const char *s, int c)
 	str[a] = '\0';
 	return (str);
 }
-
+/*
 int	main()
 {
 	char dizi[] = "yasintemp";
 	printf("%s",ft_strchr(dizi,'i'));
-}
+}*/

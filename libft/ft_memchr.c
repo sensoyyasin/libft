@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/05 11:17:56 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/05 11:17:58 by ysensoy          ###   ########.fr       */
+/*   Created: 2022/02/09 10:15:39 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/09 16:18:08 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,17 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	if (n < i)
 		return (0);
-	else
+	else if (k == 1)
 		return (&str[i - 1]);
+	else
+		return (0);
 }
 
 /*int	main()
 {
 	char cp[] = "bilgisayar";
 	char cd = 'g';
-	printf("%c karakterin bellek adresi %p\n", cd, ft_memchr(cp, cd, 1));
-	printf("%c karakterin bellek adresi %p\n", cd, memchr(cp, cd, 1));
+	printf("%c karakterin bellek adresi %p\n", cd, ft_memchr(cp, cd, 2));
+	printf("%c karakterin bellek adresi %p\n", cd, memchr(cp, cd, 2));
 	return 0;
 }*/

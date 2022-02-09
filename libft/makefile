@@ -6,7 +6,7 @@
 #    By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 19:33:29 by ysensoy           #+#    #+#              #
-#    Updated: 2022/02/05 11:07:02 by ysensoy          ###   ########.fr        #
+#    Updated: 2022/02/09 15:42:32 by ysensoy          ###   ########.tr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FILES	:= $(shell find . -type f ! -name "ft_lst*.c" -name "ft_*.c")
 OBJ		:= $(FILES:%.c=%.o)
 
 BSRC	:= $(wildcard ft_lst*.c)
-B_OBJ	:= $(BSRC:%c=%.o)
+B_OBJ	:= $(BSRC:%.c=%.o)
 
 all:	$(NAME)
 
@@ -35,4 +35,4 @@ fclean:	clean
 
 re:	fclean all
 
-.PHONY:	all	bonus clean fclean re FILES
+.PHONY:	all	bonus clean fclean re
