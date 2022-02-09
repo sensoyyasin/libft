@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:17:47 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:15 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/09 17:07:44 by ysensoy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_strrchr(const char *s, int c)
 /*
 int	main()
 {
-	char dizi[] = "yasin";
-	printf("%s",(ft_strrchr(dizi,'s')));
-}*/
+	char dizi[] = "bonjour";
+	printf("%s",(ft_strrchr(dizi,'o')));
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:15:39 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 16:18:08 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/09 20:16:39 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,18 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	k = 0;
 	str = (char *)s;
-	while (str[i] != '\0' && k == 0)
+	while (i < n)
 	{
 		if (str[i] == c)
-		{
+			return (&str[i]);
+		else
 			k = 1;
-		}
 		i++;
 	}
-	if (n < i)
+	if (k == 1)
 		return (0);
-	else if (k == 1)
-		return (&str[i - 1]);
 	else
-		return (0);
+		return (&str[i]);
 }
 
 /*int	main()
