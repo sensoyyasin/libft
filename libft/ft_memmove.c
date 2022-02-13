@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:15:55 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:29 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/12 17:53:38 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return ((char *)dst);
 }
-/*int	main()
+/*
+int	main()
 {
-	const	char src[50] = "yasin";
-	char dest[50] = "besiktas";
-	ft_memmove(dest,src ,3);
-	printf("%s",ft_memmove(dest,src,3));
+	char dest[50] = "fenerbahce";
+	//ft_memmove(dest + 4,dest ,4);
+	printf("%s",ft_memmove(dest + 1, dest + 3, 4));
 }*/

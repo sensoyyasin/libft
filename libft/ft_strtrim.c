@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:17:54 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:14 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/12 14:40:18 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 int	main()
 {
-	char	yasin[] = "setbutes";
-	char	mete[] = "set";
+	char	yasin[] = "    \t \n   s \n   \t  \t";
+	char	mete[] = " \t\n";
 	printf("%s",ft_strtrim(yasin,mete));
 }*/

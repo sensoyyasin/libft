@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:16:37 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/11 13:11:23 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/11 14:29:12 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/11 15:13:59 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	size_t	i;
-	size_t	a;
-
-	a = ft_strlen(s);
-	i = 0;
-	while (i <= a)
-	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i++;
-	}
-	return (NULL);
+	if (!lst)
+		return ;
+	(*del)(lst->content);
+	free(lst);
 }
-/*
-int	main()
-{
-	char dizi[] = "bonjour";
-	printf("%s",ft_strchr(dizi,'o'));
-}*/

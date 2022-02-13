@@ -6,26 +6,35 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:16:26 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:27 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/12 12:59:06 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 //#include <fcntl.h>
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	*c;
-
-	i = 0;
-	c = ft_itoa(n);
-	if (c)
+	if (n == -2147483648)
 	{
-		while (c[i] != '\0')
-		{
-			write(fd, &c[i], 1);
-			i++;
-		}
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		ft_putnbr_fd(147483648, fd);
+	}
+	else if (n < 0)
+	{
+		n = -n;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(n, fd);
+	}
+	else if (n < 10)
+	{
+		ft_putchar_fd(n + 48, fd);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
 }
 /*

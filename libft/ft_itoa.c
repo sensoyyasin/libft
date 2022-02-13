@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:15:32 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:34 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/13 17:58:12 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,31 +34,47 @@ static char	*ft_strrev(char	*s)
 	return (str);
 }
 
-static char	*ayrilacakalan(int temp)
+static int	ayrilacakalan(int temp)
 {
 	int		index;
-	int		neg;
-	char	*str;
-	int		temp1;
 
 	index = 0;
-	neg = 0;
-	temp1 = temp;
-	if (temp1 < 0)
-		neg = 1;
-	while (temp1 != 0)
+	if (temp < 0)
+		temp *= -1;
+	while (temp > 0)
 	{
+		temp = temp / 10;
 		index++;
-		temp1 = temp1 / 10;
 	}
-	str = (char *)malloc(sizeof(char) * (index + 1));
-	return (str);
+	return (index);
+}
+
+static char	*ft_while(int a, char *s)
+{
+	int	i;
+	int	len;
+
+	i = 0;
+	len = ayrilacakalan(a);
+	if (a < 0)
+	{
+		a *= -1;
+		s[len] = '-';
+	}
+	while (a > 0)
+	{
+		s[i] = (a % 10) + 48;
+		a = a / 10;
+		i++;
+	}
+	s = ft_strrev(s);
+	return (s);
 }
 
 char	*ft_itoa(int n)
 {
-	int		i;
 	int		temp;
+	int		len;
 	char	*s;
 
 	if (n == -2147483648)
@@ -66,18 +82,13 @@ char	*ft_itoa(int n)
 	else if (n == 0)
 		return (ft_strdup("0"));
 	temp = n;
+	len = ayrilacakalan(temp);
 	if (n < 0)
-		n *= -1;
-	s = ayrilacakalan(temp);
-	i = 0;
-	while (n != 0)
-	{
-		s[i] = (n % 10) + 48;
-		n = n / 10;
-		i++;
-	}
-	if (temp < 0)
-		s[i] = '-';
-	s = ft_strrev(s);
+		len = len + 1;
+	s = (char *)malloc((sizeof(char) * len) + 1);
+	if (!s)
+		return (0);
+	s[len] = '\0';
+	s = ft_while(temp, s);
 	return (s);
 }

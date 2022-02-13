@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:16:43 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:24 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/11 12:22:40 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	src = (char *)s1;
-	dest = malloc(sizeof(src));
+	dest = (char *)malloc(ft_strlen(src) + 1);
+	if (dest == 0)
+		return (NULL);
 	while (src[i] != '\0')
 	{
 		dest[i] = src[i];

@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:16:58 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:22 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/11 13:08:46 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	a = 0;
 	src = (char *)s1;
+	if (!s1)
+		return (0);
 	dest = (char *)s2;
 	dizi = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	if (!dizi)
+		return (0);
 	while (src[i] != '\0')
 	{
 		dizi[i] = src[i];
 		i++;
 	}
 	while (dest[a] != '\0')
-	{
-		dizi[i] = dest[a];
-		a++;
-		i++;
-	}
+		dizi[i++] = dest[a++];
 	dizi[i] = '\0';
 	return (dizi);
 }

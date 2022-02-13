@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:16:37 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/11 13:11:23 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/13 11:02:10 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/13 11:32:54 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	i;
-	size_t	a;
+	t_list	*temp;
 
-	a = ft_strlen(s);
-	i = 0;
-	while (i <= a)
+	if (!*lst)
+		*lst = new;
+	else
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i++;
+		temp = ft_lstlast(*lst);
+		temp->next = new;
 	}
-	return (NULL);
 }
-/*
-int	main()
-{
-	char dizi[] = "bonjour";
-	printf("%s",ft_strchr(dizi,'o'));
-}*/

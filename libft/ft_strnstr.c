@@ -6,13 +6,13 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:17:41 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 20:20:38 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/11 11:45:31 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*samanlik;
 	char	*igne;
@@ -23,11 +23,13 @@ void	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	a = 0;
 	samanlik = (char *)haystack;
 	igne = (char *)needle;
+	if (igne[a] == '\0')
+		return (samanlik);
 	while (samanlik[i] != '\0' && i < len)
 	{
-		while ((samanlik[i] == igne[a] || igne[a] == '\0') && i < len)
+		while (samanlik[i] == igne[a] && i + 1 <= len)
 		{
-			if (igne[a] == '\0')
+			if (igne[a + 1] == '\0')
 				return (&samanlik[i - a]);
 			i++;
 			a++;
@@ -43,7 +45,7 @@ void	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 int	main()
 {
 	char	yasin[] = "taha haksal";
-	char	yasin2[] = "ha ha";
-	printf("%s\n", ft_strnstr(yasin,yasin2,10));
-	printf("%s", strnstr(yasin,yasin2,10));
+	char	yasin2[] =  "taha haksal";
+	printf("%s\n", ft_strnstr(yasin,yasin2,5));
+	printf("%s", strnstr(yasin,yasin2,5));
 }*/

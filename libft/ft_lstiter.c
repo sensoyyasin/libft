@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:16:37 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/11 13:11:23 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/13 12:59:54 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/13 13:14:24 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	i;
-	size_t	a;
+	t_list	*tmp;
 
-	a = ft_strlen(s);
-	i = 0;
-	while (i <= a)
+	tmp = lst;
+	if (!f)
+		return ;
+	while (tmp)
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i++;
+		f(tmp->content);
+		tmp = tmp->next;
 	}
-	return (NULL);
 }
-/*
-int	main()
-{
-	char dizi[] = "bonjour";
-	printf("%s",ft_strchr(dizi,'o'));
-}*/

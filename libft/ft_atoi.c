@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:14:36 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:41 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/11 17:06:34 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 int	ft_atoi(const char *str)
 {
-	int		s;
-	int		d;
+	long long	s;
+	int			d;
 
 	s = 0;
 	d = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\n'
-		|| *str == '\f' || *str == '\v' || *str == '\r')
+	while ((*str < 14 && *str > 8) || *str == 32)
 		str++;
 	if (*str == '-')
 	{
@@ -29,19 +28,21 @@ int	ft_atoi(const char *str)
 	}
 	else if (*str == '+')
 		str++;
-	if (*str == '+' || *str == '-')
-		return (0);
 	while (*str >= '0' && *str <= '9')
 	{
 		s = (s * 10) + (*str - 48);
 		str++;
+		if (s > 2147483647 && d == 1)
+			return (-1);
+		else if (s > 2147483648 && d == -1)
+			return (0);
 	}
-	return (s * d);
+	return ((int)(s * d));
 }
 /*
 int	main()
 {
-	char	yasin[] = " +21474836";
+	char	yasin[] = " +-21474836555111111111111";
 	printf("%d\n",ft_atoi(yasin));
 	printf("%d",atoi(yasin));
 }*/

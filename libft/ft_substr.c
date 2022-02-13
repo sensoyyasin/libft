@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:17:58 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 10:18:12 by ysensoy          ###   ########.fr       */
+/*   Updated: 2022/02/11 14:35:20 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 
 	i = 0;
 	src = (char *)s;
-	str = (char *)malloc(sizeof(char) * len);
+	if (!src)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (start + len > ft_strlen(src))
+		return (str);
+	if (str == 0)
+		return (NULL);
 	while (i < len)
 	{
 		str[i] = src[start];
@@ -34,5 +40,5 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 int	main()
 {
 	char	yasin[] = "yasintemp";
-	printf("%s",ft_substr(yasin,3,4));
+	printf("%s",ft_substr(yasin,3,10));
 }*/

@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:16:37 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/11 13:11:23 by ysensoy          ###   ########.tr       */
+/*   Created: 2022/02/11 16:15:27 by ysensoy           #+#    #+#             */
+/*   Updated: 2022/02/11 16:37:54 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	i;
-	size_t	a;
+	t_list	*temp;
 
-	a = ft_strlen(s);
-	i = 0;
-	while (i <= a)
+	if (lst)
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i++;
+		while (*lst)
+		{
+			temp = (*lst)-> next;
+			ft_lstdelone((*lst), del);
+			*(lst) = temp;
+		}
 	}
-	return (NULL);
 }
-/*
-int	main()
-{
-	char dizi[] = "bonjour";
-	printf("%s",ft_strchr(dizi,'o'));
-}*/

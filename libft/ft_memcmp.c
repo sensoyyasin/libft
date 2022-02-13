@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:15:45 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 19:48:07 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/11 13:07:19 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ss1;
 	unsigned char	*ss2;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	ss1 = (unsigned char *)s1;
