@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:17:54 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/12 14:40:18 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/14 16:01:11 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	start = 0;
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
 	end = ft_strlen(s1);
 	while (s1[start] && ft_checkset(s1[start], set))
@@ -57,7 +57,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 int	main()
 {
-	char	yasin[] = "    \t \n   s \n   \t  \t";
-	char	mete[] = " \t\n";
+	char	yasin[] = "xxxenxxx";
+	char	mete[] = "x";
 	printf("%s",ft_strtrim(yasin,mete));
 }*/

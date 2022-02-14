@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:16:32 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/11 13:20:29 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/14 11:44:59 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	main()
 {
 int	i = open("my.txt",O_WRONLY);
 int	c = open("taha.txt",O_WRONLY);
-printf("%d",i);
-printf("\n%d",c);
+printf("%d\n",i);
+printf("%d\n",c);
 ft_putstr_fd("yasin",i);
-ft_putstr_fd("malintemp",c);
+ft_putstr_fd("taha",c);
 }*/

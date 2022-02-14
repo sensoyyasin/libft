@@ -6,64 +6,70 @@
 /*   By: ysensoy <ysensoy@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 17:25:04 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/13 11:10:46 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/14 16:30:11 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	char_counter(char *s, char c)
+static char	**ft_place(char **str, char const *s1, char ch, int wordcount)
 {
-	size_t	i;
-	size_t	j;
+	int		index;
+	int		word_len;
+	int		word;
 
-	i = 0;
-	j = 0;
-	while (s[i] != '\0')
+	word = 0;
+	index = 0;
+	word_len = 0;
+	while (word < wordcount)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
-			j++;
-		while (s[i] != c && s[i] != '\0')
-			i++;
+		while (s1[index] != '\0' && s1[index] == ch)
+			index++;
+		while (s1[index] != '\0' && s1[index] != ch)
+		{
+			word_len++;
+			index++;
+		}
+		str[word] = ft_substr(s1, index - word_len, word_len);
+		word_len = 0;
+		word++;
 	}
-	return (j);
+	str[word] = 0;
+	return (str);
 }
 
-static char	**split_string(char **ret, char *s, char c)
+static int	strcount(char const *str, char c)
 {
-	size_t	j;
-	size_t	k;
-	size_t	i;
+	int		i;
+	int		count;
 
 	i = 0;
-	j = 0;
-	k = 0;
-	while (j < char_counter((char *)s, c))
+	count = 0;
+	while (str[i] != '\0')
 	{
-		while (s[i] == c)
+		if (str[i] == c)
 			i++;
-		k = i;
-		while (s[k] != c && s[k] != '\0')
-			k++;
-		ret[j] = ft_substr((char *)s, i, (k - i));
-			i = k;
-		j++;
+		else
+		{
+			count++;
+			while (str[i] && str[i] != c)
+				i++;
+		}
 	}
-	ret[j] = NULL;
-	return (ret);
+	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
-	char	**ret1;
+	char	**str;
+	int		wrdcnt;
 
 	if (!s)
 		return (0);
-	ret1 = (char **)malloc(sizeof(char *) * (char_counter((char *)s, c) + 1));
-	if (!ret1)
+	wrdcnt = strcount(s, c);
+	str = (char **)malloc(sizeof(char *) * wrdcnt + 1);
+	if (!str)
 		return (0);
-	ret1 = split_string(ret1, (char *)s, c);
-	return (ret1);
+	ft_place(str, s, c, wrdcnt);
+	return (str);
 }
