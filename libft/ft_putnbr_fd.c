@@ -6,12 +6,11 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:16:26 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/12 12:59:06 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/17 13:07:23 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <fcntl.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {

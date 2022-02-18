@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:14:36 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/11 17:06:34 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/17 11:39:11 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_atoi(const char *str)
 /*
 int	main()
 {
-	char	yasin[] = " +-21474836555111111111111";
+	char	yasin[] = " -21474836555111111111111";
 	printf("%d\n",ft_atoi(yasin));
 	printf("%d",atoi(yasin));
 }*/

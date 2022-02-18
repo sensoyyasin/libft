@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:17:41 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/11 11:45:31 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/17 13:08:09 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 int	main()
 {
 	char	yasin[] = "taha haksal";
-	char	yasin2[] =  "taha haksal";
-	printf("%s\n", ft_strnstr(yasin,yasin2,5));
-	printf("%s", strnstr(yasin,yasin2,5));
+	char	yasin2[] =  "ha ha";
+	printf("%s\n", ft_strnstr(yasin,yasin2,8));
+	printf("%s", strnstr(yasin,yasin2,8));
 }*/

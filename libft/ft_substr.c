@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:17:58 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/15 12:52:47 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/18 11:54:07 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 int	main()
 {
 	char	yasin[] = "yasintemp";
-	printf("%s",ft_substr(yasin,3,10));
+	printf("%s",ft_substr(yasin,3,4));
 }*/

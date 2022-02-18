@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:17:35 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/09 17:59:30 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/17 10:27:40 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int	ft_strncmp(const char	*s1, const char	*s2, size_t n)
 #include <string.h>
 int	main()
 {
-	printf("%d\n",ft_strncmp("yasin","yasir",3));
+	printf("%d\n",ft_strncmp("yasin","yasir",5));
 	//printf("%d",strncmp("test\200", "test\0", 6));
 }*/

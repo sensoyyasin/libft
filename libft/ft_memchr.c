@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:15:39 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/15 12:48:25 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/17 13:08:31 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	else
 		return (&str[i]);
 }
-
-/*int	main()
+/*
+int	main()
 {
 	char cp[] = "bilgisayar";
 	char cd = 'g';

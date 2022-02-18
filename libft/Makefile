@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ysensoy <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 19:33:29 by ysensoy           #+#    #+#              #
-#    Updated: 2022/02/09 15:42:32 by ysensoy          ###   ########.tr        #
+#    Updated: 2022/02/18 12:06:58 by ysensoy          ###   ########.tr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	libft.a
+NAME	:= libft.a
 CC		:= gcc
 CFLAGS	:= -Wall -Wextra -Werror -I. -c
 FILES	:= $(shell find . -type f ! -name "ft_lst*.c" -name "ft_*.c")
@@ -24,7 +24,7 @@ all:	$(NAME)
 $(NAME): $(OBJ)
 	ar	-rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(B_OBJ)
+bonus:	$(OBJ) $(B_OBJ)
 	ar	-rcs $(NAME) $(OBJ) $(B_OBJ)
 
 clean:

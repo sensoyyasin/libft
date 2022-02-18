@@ -6,7 +6,7 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:17:03 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/12 17:54:07 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/17 10:19:21 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 int main(void)
 {
 	char yasintemp[55] = "yasintemp";
-	char metetemp[50] = "metecentertemp";
-	printf("%lu\n", ft_strlcat(yasintemp, metetemp, 12));
-	printf("%s\n", yasintemp);
+	char metetemp[50] = "mete";
+	printf("%lu\n", ft_strlcat(yasintemp, metetemp, 5));
 }*/

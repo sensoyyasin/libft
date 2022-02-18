@@ -6,22 +6,20 @@
 /*   By: ysensoy <ysensoy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:26:12 by ysensoy           #+#    #+#             */
-/*   Updated: 2022/02/14 16:12:28 by ysensoy          ###   ########.tr       */
+/*   Updated: 2022/02/18 13:57:39 by ysensoy          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_list
 {
 	void			*content;
-	struct s_list	*next;
+	struct	t_list	*next;
 }	t_list;
 
 int		ft_atoi(const	char *str);
